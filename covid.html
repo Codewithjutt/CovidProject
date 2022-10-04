@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="./covid.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Dosis:wght@200&family=Mochiy+Pop+P+One&family=Oleo+Script+Swash+Caps:wght@400;700&family=Parisienne&family=Roboto+Condensed&family=Roboto:ital,wght@0,300;0,400;1,100&display=swap"
+        rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covid App</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="input-con">
+            <h1 class="h1">COVID-19</h1>
+            <h3 class="h3">Country</h3>
+            <!-- Form Here  -->
+            <form action="" class="form1">
+                <input type="text" placeholder="Enter Country Name" type="submit">
+            </form>
+        </div>
+
+        <!-- Data Section  -->
+        <div class="data-show"></div>
+    </div>
+    <script>
+        var form = document.querySelector("form")
+        var input = document.querySelector("input")
+        var show = document.querySelector(".data-show")
+        var coun = document.querySelector(".h3")
+        // Form Submit Event
+        form.onsubmit = (e) => {
+            e.preventDefault()
+            var inputValue = input.value
+            shower(inputValue)
+        }
+        function shower(country) {
+            var array = []
+            console.log(country);
+            fetch(` https://covid-api.mmediagroup.fr/v1/cases?country=${country}`)
+                .then(response => response.json())
+                .then(country => {
+                    array.push(country.All)
+                    console.log(array);
+                    coun.innerHTML = array.map((co) => {
+                        return `<h3>${co.country}</h3>`
+                    })
+                    show.innerHTML = array.map((arr) => {
+                        return `<div class="s">
+                        <h1>Population : ${arr.population}</h1> 
+                        <h1>Confirmed Cases : ${arr.confirmed}</h1>
+                        <h1>Deaths : ${arr.deaths}</h1>
+                        <h1>Recovered : ${arr.recovered}</h1>
+                            </div>`
+                    })
+                })
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

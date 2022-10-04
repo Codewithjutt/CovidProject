@@ -1,0 +1,100 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+body{
+    overflow-x: hidden;
+    background-image: url(/covidimg.jpg);
+    background-position: top;
+    background-size: cover;
+    font-family: 'Roboto', sans-serif;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    /* border: 2px solid red; */
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+}
+.input-con{
+    padding:40px 20px;
+}
+.h1{
+    font-size:80px;
+    color: aqua;
+    text-shadow: 0 5px 4px rgba(13,252,232,0.9), 0 2px 1px rgba(13,252,232,0.9);
+    font-weight: lighter;
+}
+.h3{
+    font-size: 30px;
+    color: aqua;
+    /* text-shadow: 0 2px 2px rgba(13,252,232,0.9), 0 2px 1px rgba(13,252,232,0.9); */
+    font-weight: 100;
+    margin:10px 0px  40px 10px;
+    letter-spacing: 3px;
+}
+form input{
+    padding: 15px 20px;
+    width: 300px;
+    border: none;
+    outline: none;
+    box-shadow: 0px 3px 10px 1px rgba(207,12,12,0.9);
+    color: rgba(207,12,12,0.9);
+    border-radius: 50px;
+    font-size: 20px;
+    border: 1px solid rgba(207,12,12,0.9);;
+    background: transparent;
+}
+input::placeholder{
+    font-size:18px;
+    font-weight: lighter;
+    color: rgba(207,12,12,0.9);
+    outline: none;
+    opacity: .6;
+    border: none;
+}
+.data-show{
+    width: 60%;
+    height: 60vh;
+    font-size: 18px;
+    position: relative;
+    left: 300px;
+    top: 100px;
+    /* background-color: aquamarine; */
+    /* box-shadow: 0px 3px 10px 1px rgba(207,12,12,0.9); */
+    border-radius: 30px;
+    /* border: 2px solid red; */
+}
+.s{
+    display: flex;
+    font-size: 18px;
+    font-weight: lighter;
+    flex-direction: column;
+    color: white;
+    font-weight: lighter;
+    animation: open 2s forwards linear;
+}
+@keyframes open {
+    0%{
+        color: rgba(207,12,12,0.9);
+        transform: scale(0);
+    }
+    100%{
+        text-shadow: 0 5px 4px rgba(207,12,12,0.9), 0 2px 1px rgba(207,12,12,0.9);
+        color: rgba(13,252,232,0.9);
+        transform: scale(1);
+    }
+}
+.s h1{
+    margin: 10px;
+}
+
+
+
+
+
+
+
+
